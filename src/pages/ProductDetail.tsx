@@ -6,6 +6,7 @@ import ReviewSection from '../components/Product/ReviewSection';
 import { useCart } from '../context/CartContext';
 import type { Product } from '../types/product';
 import { getImageUrl } from '../utils/imageUrl';
+import { API_BASE_URL } from '../config/api';
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -22,7 +23,7 @@ const ProductDetail: React.FC = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products');
+        const response = await fetch(`${API_BASE_URL}/api/products`);
         const data = await response.json();
         
         // Find the specific product by ID

@@ -4,18 +4,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import type { CartItem } from '../types/cart';
 import FashionRow from '../components/layout/FashionRow';
+import { getImageUrl } from '../utils/imageUrl';
 
 const CartPage: React.FC = () => {
   const { cartItems, cartTotal, updateQuantity, removeFromCart } = useCart();
   const navigate = useNavigate();
-
-  // Updated to use the backend image server logic
-  const resolveImagePath = (path: string) => {
-    if (!path) return '';
-    if (path.startsWith('http')) return path;
-    // Assuming your images are served from http://localhost:5000/images/
-    return `http://localhost:5000/images/${path}`;
-  };
 
   if (cartItems.length === 0) {
     return (
@@ -44,7 +37,7 @@ const CartPage: React.FC = () => {
               <div key={`${item.id}-${item.selectedSize}`} className="bg-white p-6 shadow-sm border border-white/50 flex flex-col h-full">
                 <div className="aspect-[3/4] w-full overflow-hidden bg-gray-50 mb-6">
                   <img 
-                    src={resolveImagePath(item.imageUrl)} 
+                    src={getImageUrl(item.imageUrl)} 
                     alt={item.name} 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                   />

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, X, ArrowRight, ShoppingBag } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../../config/api';
+import { getImageUrl } from '../../utils/imageUrl';
 
 interface SearchResult {
   id: number;
@@ -48,7 +50,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
   const performSearch = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/search?q=${query}`);
+      const response = await fetch(`${API_BASE_URL}/api/search?q=${query}`);
       const data = await response.json();
       setResults(data);
     } catch (error) {
@@ -119,7 +121,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
                 >
                   <div className="w-24 h-32 bg-gray-200 flex-shrink-0 overflow-hidden">
                     <img 
-                      src={`http://localhost:5000/images/${product.image_url}`} 
+                      src={getImageUrl(product.image_url)} 
                       alt={product.name} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />

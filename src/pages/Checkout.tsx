@@ -3,6 +3,7 @@ import { useCart } from '../context/CartContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import type { CartItem } from '../types/cart';
+import { API_BASE_URL } from '../config/api';
 
 const Checkout: React.FC = () => {
   const { cartItems, cartTotal, clearCart } = useCart();
@@ -26,7 +27,7 @@ const Checkout: React.FC = () => {
     const fetchAddresses = async () => {
       if (!user?.id) return;
       try {
-        const response = await fetch(`http://localhost:5000/api/addresses/${user.id}`);
+        const response = await fetch(`${API_BASE_URL}/api/addresses/${user.id}`);
         const data = await response.json();
         setAddresses(data);
         if (data.length > 0) {
@@ -64,7 +65,7 @@ const Checkout: React.FC = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch(`${API_BASE_URL}/api/orders`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData)

@@ -4,6 +4,7 @@ import { User, MapPin, Package, LogOut, ChevronRight, ShoppingBag } from 'lucide
 import { useAuth } from '../context/AuthContext';
 import UserAddresses from '../components/profile/UserAddresses';
 import { getImageUrl } from '../utils/imageUrl';
+import { API_BASE_URL } from '../config/api';
 
 interface OrderItem {
   product_name: string;
@@ -57,7 +58,7 @@ const Profile: React.FC = () => {
     if (!user?.id) return;
     setLoadingOrders(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/orders/user/${user.id}`);
+      const response = await fetch(`${API_BASE_URL}/api/orders/user/${user.id}`);
       if (!response.ok) {
         throw new Error(`Server error: ${response.status}`);
       }
@@ -82,7 +83,7 @@ const Profile: React.FC = () => {
     const payload = isRegistering ? { full_name: fullName, email, password } : { email, password };
 
     try {
-      const response = await fetch(`http://localhost:5000/api/${endpoint}`, {
+      const response = await fetch(`${API_BASE_URL}/api/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

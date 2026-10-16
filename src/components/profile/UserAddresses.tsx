@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, MapPin, X } from 'lucide-react';
+import { API_BASE_URL } from '../../config/api';
 
 interface Address {
   id: number;
@@ -24,7 +25,7 @@ const UserAddresses: React.FC<{ userId: number }> = ({ userId }) => {
 
   const fetchAddresses = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/addresses/${userId}`);
+      const res = await fetch(`${API_BASE_URL}/api/addresses/${userId}`);
       const data = await res.json();
       setAddresses(data);
     } catch (err) {
@@ -39,7 +40,7 @@ const UserAddresses: React.FC<{ userId: number }> = ({ userId }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/api/addresses', {
+      const res = await fetch(`${API_BASE_URL}/api/addresses`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, user_id: userId })

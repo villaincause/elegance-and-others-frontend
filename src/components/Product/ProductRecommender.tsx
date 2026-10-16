@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import type { Product } from '../../types/product';
+import { API_BASE_URL } from '../../config/api';
+import { getImageUrl } from '../../utils/imageUrl';
 
 interface ProductRecommenderProps {
   currentProductId: string;
@@ -13,7 +15,7 @@ const ProductRecommender: React.FC<ProductRecommenderProps> = ({ currentProductI
   useEffect(() => {
     const fetchRecommendations = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products');
+        const response = await fetch(`${API_BASE_URL}/api/products`);
         const data = await response.json();
 
         // Map and Filter logic
@@ -21,7 +23,7 @@ const ProductRecommender: React.FC<ProductRecommenderProps> = ({ currentProductI
           ...p,
           id: p.id.toString(),
           price: parseFloat(p.price),
-          imageUrl: `http://localhost:5000/images/${p.image_url}`,
+          imageUrl: getImageUrl(p.image_url),
           category: p.category
         }));
 

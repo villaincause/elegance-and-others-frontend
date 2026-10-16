@@ -6,6 +6,7 @@ import FilterDrawer from '../components/shop/FilterDrawer';
 import { SlidersHorizontal, ChevronDown } from 'lucide-react';
 import type { Product } from '../types/product';
 import { getImageUrl } from '../utils/imageUrl';
+import { API_BASE_URL } from '../config/api';
 
 const ProductListing: React.FC = () => {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -52,7 +53,7 @@ const ProductListing: React.FC = () => {
   useEffect(() => {
     const fetchMasterList = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products');
+        const response = await fetch(`${API_BASE_URL}/api/products`);
         const data = await response.json();
         const mappedData = mapProductData(data);
         setMasterProducts(mappedData);
@@ -75,7 +76,7 @@ const ProductListing: React.FC = () => {
       try {
         // Change logic: If there is a search query, we should hit the search endpoint
         // Or ensure your main products endpoint handles 'q'
-        const endpoint = searchQuery ? 'http://localhost:5000/api/search' : 'http://localhost:5000/api/products';
+        const endpoint = searchQuery ? `${API_BASE_URL}/api/search` : `${API_BASE_URL}/api/products`;
         const url = new URL(endpoint);
         
         // Append Search Query if it exists
