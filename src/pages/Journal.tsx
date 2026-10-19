@@ -38,7 +38,7 @@ const Journal: React.FC = () => {
         
         {/* Header Section */}
         <div className="max-w-4xl mb-24">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-4">The Journal</p>
+          <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 mb-4 font-medium">The Journal</p>
           <h1 className="text-[32px] md:text-[56px] uppercase tracking-[0.2em] font-bold leading-tight">
             Stories, Style & <br /> Substance
           </h1>
@@ -61,7 +61,7 @@ const Journal: React.FC = () => {
               <h2 className="text-[20px] md:text-[28px] uppercase tracking-wider font-bold mt-4 mb-6 leading-snug">
                 {ARTICLES[0].title}
               </h2>
-              <p className="text-[11px] md:text-[13px] text-gray-500 leading-relaxed tracking-wide mb-8">
+              <p className="text-[11px] md:text-[13px] text-gray-600 leading-relaxed tracking-wide mb-8">
                 {ARTICLES[0].excerpt}
               </p>
               <Link to={`/journal/${ARTICLES[0].id}`} className="text-[10px] uppercase tracking-[0.3em] font-bold border-b border-black pb-2 hover:opacity-50 transition-opacity">
@@ -83,7 +83,7 @@ const Journal: React.FC = () => {
                 </div>
                 <span className="text-[9px] uppercase tracking-[0.3em] font-bold text-blue-500">{post.category}</span>
                 <h2 className="text-[16px] uppercase tracking-wider font-bold mt-3 mb-4">{post.title}</h2>
-                <p className="text-[10px] text-gray-400 uppercase tracking-widest">{post.date}</p>
+                <p className="text-[10px] text-gray-600 uppercase tracking-widest font-medium">{post.date}</p>
               </div>
             ))}
           </div>

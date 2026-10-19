@@ -8,13 +8,13 @@ const ReviewSection: React.FC<{ reviews?: Review[] }> = ({ reviews = [] }) => {
     : 0;
 
   if (reviews.length === 0) return (
-    <div className="mt-32 border-t border-gray-100 pt-20 text-center pb-20 font-['Lexend_Giga']">
-       <p className="text-[10px] uppercase tracking-widest text-gray-400">No reviews yet for this item.</p>
+    <div className="mt-32 border-t border-gray-100 pt-20 text-center pb-20 font-editorial">
+       <p className="text-[10px] uppercase tracking-widest text-gray-600">No reviews yet for this item.</p>
     </div>
   );
 
   return (
-    <div className="mt-32 border-t border-gray-100 pt-20 max-w-[1200px] mx-auto px-4 md:px-10 font-['Lexend_Giga']">
+    <div className="mt-32 border-t border-gray-100 pt-20 max-w-[1200px] mx-auto px-4 md:px-10 font-editorial">
       <div className="flex flex-col md:flex-row justify-between items-start mb-16 gap-8">
         <div>
           <h3 className="text-[12px] uppercase tracking-[0.4em] font-bold mb-4">Reviews</h3>
@@ -30,12 +30,12 @@ const ReviewSection: React.FC<{ reviews?: Review[] }> = ({ reviews = [] }) => {
                 />
               ))}
             </div>
-            <span className="text-[10px] text-gray-400 uppercase tracking-widest">
+            <span className="text-[10px] text-gray-600 uppercase tracking-widest font-medium">
               Based on {reviews.length} Reviews
             </span>
           </div>
         </div>
-        <button className="text-[10px] uppercase tracking-[0.2em] font-bold border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">
+        <button className="text-[10px] uppercase tracking-[0.2em] font-bold border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-colors">
           Write a Review
         </button>
       </div>
@@ -45,7 +45,7 @@ const ReviewSection: React.FC<{ reviews?: Review[] }> = ({ reviews = [] }) => {
           <div key={review.id} className="grid grid-cols-1 md:grid-cols-[200px_1fr_100px] gap-8 pb-12 border-b border-gray-50">
             <div className="space-y-1">
               <p className="text-[11px] font-bold uppercase tracking-widest">{review.user}</p>
-              <p className="text-[10px] text-gray-400 uppercase tracking-tighter">Verified Buyer</p>
+              <p className="text-[10px] text-gray-600 uppercase tracking-tighter font-medium">Verified Buyer</p>
             </div>
 
             <div className="space-y-4">
@@ -64,7 +64,7 @@ const ReviewSection: React.FC<{ reviews?: Review[] }> = ({ reviews = [] }) => {
             </div>
 
             <div className="text-right">
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest">{review.date}</p>
+              <p className="text-[10px] text-gray-600 uppercase tracking-widest font-medium">{review.date}</p>
             </div>
           </div>
         ))}

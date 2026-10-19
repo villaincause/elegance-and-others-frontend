@@ -94,7 +94,7 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
           className={`py-4 text-[10px] border transition-all duration-300 ${
             selectedSizes.includes(size) 
               ? 'bg-black text-white border-black' 
-              : 'border-gray-200 text-gray-400 hover:border-black'
+              : 'border-gray-200 text-gray-600 hover:border-black'
           }`}
         >
           {size}
@@ -110,7 +110,7 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
         onClick={onClose}
       />
 
-      <div className={`fixed top-0 right-0 h-full w-full max-w-[400px] bg-white z-[70] shadow-2xl transform transition-transform duration-500 ease-out font-['Lexend_Giga'] ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 h-full w-full max-w-[400px] bg-white z-[70] shadow-2xl transform transition-transform duration-500 ease-out font-editorial ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full">
           
           <div className="flex justify-between items-center px-8 py-10 border-b border-gray-100">
@@ -124,7 +124,7 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
             
             {/* Dual Range Price Filter */}
             <div className="space-y-6">
-              <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Price Range</h3>
+              <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-700">Price Range</h3>
               <div className="space-y-8 px-2">
                 <div className="relative h-1 w-full bg-gray-100 rounded">
                   {/* Track Fill */}
@@ -167,7 +167,7 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
 
                 <div className="flex justify-between items-center gap-4 pt-2">
                   <div className="flex-1 border border-gray-100 p-3 flex items-center">
-                    <span className="text-[10px] text-gray-400 mr-2">৳</span>
+                    <span className="text-[10px] text-gray-600 mr-2">৳</span>
                     <input 
                       type="number" 
                       value={priceRange[0]} 
@@ -175,9 +175,9 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
                       className="bg-transparent outline-none w-full text-[11px] font-bold"
                     />
                   </div>
-                  <span className="text-gray-300 text-[10px]">TO</span>
+                  <span className="text-gray-600 text-[10px]">TO</span>
                   <div className="flex-1 border border-gray-100 p-3 flex items-center">
-                    <span className="text-[10px] text-gray-400 mr-2">৳</span>
+                    <span className="text-[10px] text-gray-600 mr-2">৳</span>
                     <input 
                       type="number" 
                       value={priceRange[1]} 
@@ -191,7 +191,7 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
 
             {/* Availability Filter */}
             <div className="space-y-6">
-              <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Availability</h3>
+              <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-700">Availability</h3>
               <div className="flex flex-col gap-3">
                 {[
                   { id: 'all', label: 'All Items' },
@@ -202,7 +202,7 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
                     key={status.id}
                     onClick={() => setStockStatus(status.id)}
                     className={`text-left text-[11px] uppercase tracking-widest transition-colors ${
-                      stockStatus === status.id ? 'text-black font-bold' : 'text-gray-400 hover:text-black'
+                      stockStatus === status.id ? 'text-black font-bold' : 'text-gray-600 hover:text-black'
                     }`}
                   >
                     {status.label}
@@ -214,14 +214,14 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
             {/* Dynamic Categories */}
             {availableCategories.length > 1 && (
               <div className="space-y-6">
-                <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Category</h3>
+                <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-700">Category</h3>
                 <div className="flex flex-col gap-4">
                   {availableCategories.map((cat) => (
                     <button
                       key={cat}
                       onClick={() => onCategoryChange(cat)}
                       className={`text-left text-[11px] uppercase tracking-widest transition-colors ${
-                        activeCategory === cat ? 'text-black font-bold' : 'text-gray-400 hover:text-black'
+                        activeCategory === cat ? 'text-black font-bold' : 'text-gray-600 hover:text-black'
                       }`}
                     >
                       {cat}
@@ -235,14 +235,14 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
             <div className="space-y-10">
               {numericSizes.length > 0 && (
                 <div className="space-y-6">
-                  <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Waist / Numeric Size</h3>
+                  <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-700">Waist / Numeric Size</h3>
                   <SizeGrid sizes={numericSizes} />
                 </div>
               )}
 
               {letterSizes.length > 0 && (
                 <div className="space-y-6">
-                  <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Letter Size</h3>
+                  <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-700">Letter Size</h3>
                   <SizeGrid sizes={letterSizes} />
                 </div>
               )}
@@ -251,7 +251,7 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
             {/* Dynamic Colors */}
             {availableColors.length > 0 && (
               <div className="space-y-6">
-                <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Color</h3>
+                <h3 className="text-[10px] uppercase tracking-widest font-bold text-gray-700">Color</h3>
                 <div className="flex flex-wrap gap-4">
                   {availableColors.map((color) => (
                     <button
@@ -267,7 +267,7 @@ const FilterDrawer: React.FC<FilterDrawerProps> = ({
                           style={{ backgroundColor: color.hex }}
                         />
                       </div>
-                      <span className={`text-[8px] uppercase tracking-tighter ${selectedColors.includes(color.name) ? 'text-black font-bold' : 'text-gray-400'}`}>
+                      <span className={`text-[8px] uppercase tracking-tighter ${selectedColors.includes(color.name) ? 'text-black font-bold' : 'text-gray-600'}`}>
                         {color.name}
                       </span>
                     </button>

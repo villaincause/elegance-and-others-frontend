@@ -79,7 +79,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
   return (
     <div 
       style={{ backgroundColor: '#e0f2fe' }}
-      className="fixed top-[141px] inset-0 z-[40] flex flex-col animate-in fade-in slide-in-from-top-4 duration-500 font-['Lexend_Giga']"
+      className="fixed top-[141px] inset-0 z-[40] flex flex-col animate-in fade-in slide-in-from-top-4 duration-500 font-editorial"
     >
       {/* Header Area within Overlay - Wrapped in a Form */}
       <form 
@@ -110,7 +110,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
       <div className="flex-1 overflow-y-auto no-scrollbar">
         <div className="max-w-4xl mx-auto px-6 py-12">
           {loading ? (
-            <p className="text-[11px] uppercase tracking-[0.4em] text-black/40 animate-pulse">Scanning Collection...</p>
+            <p className="text-[11px] uppercase tracking-[0.4em] text-gray-600 animate-pulse">Scanning Collection...</p>
           ) : results.length > 0 ? (
             <div className="grid grid-cols-1 gap-4">
               {results.map((product) => (
@@ -127,11 +127,11 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
                     />
                   </div>
                   <div className="flex-1">
-                    <p className="text-[10px] text-black/40 uppercase tracking-[0.2em] mb-2">{product.category}</p>
-                    <h4 className="text-[14px] md:text-[18px] font-bold uppercase tracking-tight mb-2 leading-tight">
+                    <p className="text-[10px] text-gray-600 uppercase tracking-[0.2em] mb-2 font-medium">{product.category}</p>
+                    <h4 className="text-[13px] md:text-[14px] uppercase tracking-tight mb-1 leading-tight text-gray-900">
                       {product.name}
                     </h4>
-                    <p className="text-[12px] font-medium tracking-widest">${parseFloat(product.price).toFixed(2)}</p>
+                    <p className="text-[12px] font-medium text-gray-600">${parseFloat(product.price).toFixed(2)}</p>
                   </div>
                   <ArrowRight size={20} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300" />
                 </div>

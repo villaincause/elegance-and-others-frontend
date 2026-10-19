@@ -56,7 +56,7 @@ const UserAddresses: React.FC<{ userId: number }> = ({ userId }) => {
   };
 
   return (
-    <div className="font-['Lexend_Giga']">
+    <div className="font-editorial">
       <div className="flex justify-between items-center mb-10">
         <h2 className="text-[12px] uppercase tracking-[0.3em] font-bold">Saved Addresses</h2>
         <button 
@@ -72,13 +72,13 @@ const UserAddresses: React.FC<{ userId: number }> = ({ userId }) => {
           <div key={addr.id} className="border border-gray-100 p-6 relative group bg-white shadow-sm hover:shadow-md transition-shadow">
             <MapPin size={16} className="text-gray-300 mb-4" />
             <p className="text-[11px] font-bold uppercase mb-2">{addr.full_name}</p>
-            <p className="text-[10px] text-gray-500 uppercase leading-relaxed mb-4">
+            <p className="text-[10px] text-gray-600 uppercase leading-relaxed mb-4 font-medium">
               {addr.address_line1}<br />
               {addr.city}, {addr.postal_code}<br />
               T: {addr.phone_number}
             </p>
             {/* Delete button (only for logic, you can add the endpoint later) */}
-            <button className="text-gray-300 hover:text-red-500 transition-colors absolute top-6 right-6">
+            <button className="text-gray-400 hover:text-red-500 transition-colors absolute top-6 right-6">
               <Trash2 size={14} />
             </button>
           </div>
@@ -90,7 +90,7 @@ const UserAddresses: React.FC<{ userId: number }> = ({ userId }) => {
         <div className="fixed inset-0 z-[500] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsModalOpen(false)} />
           <div className="relative bg-white w-full max-w-md p-10 shadow-2xl">
-            <button onClick={() => setIsModalOpen(false)} className="absolute top-6 right-6 text-gray-400 hover:text-black">
+            <button onClick={() => setIsModalOpen(false)} className="absolute top-6 right-6 text-gray-600 hover:text-black font-medium">
               <X size={20} strokeWidth={1} />
             </button>
             

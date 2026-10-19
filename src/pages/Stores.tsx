@@ -35,7 +35,7 @@ const Stores: React.FC = () => {
         
         {/* Page Header */}
         <div className="mb-20 text-center md:text-left">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-4">Visit Us</p>
+          <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 mb-4 font-medium">Visit Us</p>
           <h1 className="text-[28px] md:text-[40px] uppercase tracking-[0.6em] font-bold">Our Stores</h1>
         </div>
 
@@ -47,10 +47,10 @@ const Stores: React.FC = () => {
               <img 
                 src={STORES[0].image} 
                 alt="Store Interior" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
               />
             </div>
-            <p className="mt-6 text-[9px] uppercase tracking-[0.3em] text-gray-500 italic">
+            <p className="mt-6 text-[9px] uppercase tracking-[0.3em] text-gray-600 italic font-medium">
               Our spaces are designed to reflect the same quiet luxury as our collections.
             </p>
           </div>

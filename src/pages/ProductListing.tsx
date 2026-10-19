@@ -137,7 +137,7 @@ const ProductListing: React.FC = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-transparent font-['Lexend_Giga'] pt-40 pb-20">
+    <div className="w-full min-h-screen bg-transparent font-editorial pt-40 pb-20">
       <header className="px-4 md:px-10 mb-12">
         <div className="flex flex-col md:flex-row justify-between items-baseline mb-8 gap-4">
           <h1 className="text-2xl md:text-3xl font-bold uppercase tracking-widest text-[#1a1a1a]">
@@ -146,7 +146,7 @@ const ProductListing: React.FC = () => {
               ? `Results for: ${searchQuery}` 
               : (activeFilter === 'new' ? 'New Arrivals' : activeFilter === 'sale' ? 'Sales' : activeCategory)}
           </h1>
-          <p className="text-[10px] text-gray-400 uppercase tracking-[0.3em]">{allProducts.length} Products</p>
+          <p className="text-[10px] text-gray-600 uppercase tracking-[0.3em] font-medium">{allProducts.length} Products</p>
         </div>
         
         <div className="flex justify-between items-center border-b border-black/5 pb-6">
@@ -158,14 +158,14 @@ const ProductListing: React.FC = () => {
             <span className="text-[10px] uppercase tracking-[0.2em] font-bold">
               Refine 
               {(selectedSizes.length + selectedColors.length + (stockStatus !== 'all' ? 1 : 0)) > 0 && (
-                <span className="ml-1 text-gray-400">({selectedSizes.length + selectedColors.length + (stockStatus !== 'all' ? 1 : 0)})</span>
+                <span className="ml-1 text-gray-600 font-medium">({selectedSizes.length + selectedColors.length + (stockStatus !== 'all' ? 1 : 0)})</span>
               )}
             </span>
           </button>
 
           <div className="relative group">
             <button className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold">
-              Sort By: <span className="text-gray-400 font-normal">{sortBy.replace('-', ' ')}</span>
+              Sort By: <span className="text-gray-600 font-medium">{sortBy.replace('-', ' ')}</span>
               <ChevronDown size={14} />
             </button>
             <div className="absolute right-0 top-full mt-2 w-48 bg-white shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -185,7 +185,7 @@ const ProductListing: React.FC = () => {
 
       <section className="px-4 md:px-10">
         {loading ? (
-          <div className="py-20 text-center uppercase tracking-[0.5em] text-[10px] text-gray-400 animate-pulse">Updating...</div>
+          <div className="py-20 text-center uppercase tracking-[0.5em] text-[10px] text-gray-600 animate-pulse">Updating...</div>
         ) : (
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-x-6 md:gap-y-16">
             {allProducts.map((product) => (
@@ -199,7 +199,7 @@ const ProductListing: React.FC = () => {
 
       {allProducts.length === 0 && !loading && (
         <div className="flex flex-col items-center justify-center py-40 gap-6">
-          <div className="uppercase tracking-[0.5em] text-gray-300 text-[11px]">
+          <div className="uppercase tracking-[0.5em] text-gray-600 text-[11px] font-medium">
             {searchQuery ? "No products match your search." : "No products match these filters."}
           </div>
           <button 
@@ -211,7 +211,7 @@ const ProductListing: React.FC = () => {
                 // Also clear search if applicable
                 if (searchQuery) setSearchParams({});
             }}
-            className="text-[10px] uppercase tracking-widest border-b border-black pb-1 hover:text-gray-400 hover:border-gray-400 transition-colors"
+            className="text-[10px] uppercase tracking-widest border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-colors"
           >
             Reset Filters {searchQuery && "& Search"}
           </button>

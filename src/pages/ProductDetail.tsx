@@ -66,7 +66,7 @@ const ProductDetail: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen pt-40 text-center uppercase tracking-[0.5em] text-[10px] text-gray-400 font-['Lexend_Giga']">
+      <div className="min-h-screen pt-40 text-center uppercase tracking-[0.5em] text-[10px] text-gray-600 animate-pulse font-editorial">
         Loading Details...
       </div>
     );
@@ -74,7 +74,7 @@ const ProductDetail: React.FC = () => {
 
   if (!product) {
     return (
-      <div className="min-h-screen pt-40 text-center uppercase tracking-widest font-['Lexend_Giga']">
+      <div className="min-h-screen pt-40 text-center uppercase tracking-widest font-editorial">
         Product Not Found
       </div>
     );
@@ -97,11 +97,11 @@ const ProductDetail: React.FC = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-transparent font-['Lexend_Giga'] pt-24 pb-20 px-4 md:px-12 lg:px-20">
+    <div className="w-full min-h-screen bg-transparent font-editorial pt-24 pb-20 px-4 md:px-12 lg:px-20">
       {/* Back Button */}
       <button 
         onClick={() => navigate(-1)}
-        className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400 hover:text-black mb-12 transition-colors"
+        className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-600 hover:text-black mb-12 transition-colors font-medium"
       >
         <ArrowLeft size={14} strokeWidth={1.5} />
         Back to Shop
@@ -127,19 +127,19 @@ const ProductDetail: React.FC = () => {
         <div className="w-full lg:w-[45%]">
           <div className="sticky top-32 space-y-10">
             <div>
-              <nav className="text-[9px] text-gray-400 uppercase tracking-[0.2em] mb-4">
+              <nav className="text-[10px] text-gray-600 uppercase tracking-[0.2em] mb-4 font-medium">
                 Shop / {product.category}
               </nav>
               <h1 className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-gray-900 mb-2">
                 {product.name}
               </h1>
-              <p className="text-xl text-gray-500">${product.price.toFixed(2)}</p>
+              <p className="text-xl text-gray-600 font-medium">${product.price.toFixed(2)}</p>
             </div>
 
             {/* Color Selection */}
             <div>
               <p className="text-[10px] uppercase tracking-[0.2em] font-bold mb-4">
-                Color: <span className="font-normal text-gray-400">{selectedColor?.name}</span>
+                Color: <span className="font-normal text-gray-600">{selectedColor?.name}</span>
               </p>
               <div className="flex gap-4">
                 {product.colors?.map((color, idx) => (
@@ -158,7 +158,7 @@ const ProductDetail: React.FC = () => {
             <div>
               <div className="flex justify-between items-center mb-4">
                 <p className="text-[10px] uppercase tracking-[0.2em] font-bold">Size:</p>
-                <button className="text-[9px] underline uppercase tracking-widest text-gray-400 hover:text-black transition-colors">Size Guide</button>
+                <button className="text-[9px] underline uppercase tracking-widest text-gray-600 hover:text-black transition-colors font-medium">Size Guide</button>
               </div>
               <div className="flex flex-wrap gap-2">
                 {product.sizes?.map((size) => (
@@ -168,7 +168,7 @@ const ProductDetail: React.FC = () => {
                     className={`border px-5 py-3 text-[11px] min-w-[65px] transition-all duration-300 ${
                       selectedSize === size 
                         ? 'border-black bg-black text-white' 
-                        : 'border-gray-200 hover:border-black text-gray-500'
+                        : 'border-gray-200 hover:border-black text-gray-700'
                     }`}
                   >
                     {size}
@@ -189,11 +189,11 @@ const ProductDetail: React.FC = () => {
             <div className="pt-10 border-t border-gray-100">
               <div className="space-y-4">
                 <h4 className="text-[10px] uppercase tracking-widest font-bold">Details & Care</h4>
-                <p className="text-[11px] leading-relaxed text-gray-500 uppercase tracking-wider">
+                <p className="text-[11px] leading-relaxed text-gray-600 uppercase tracking-wider">
                   Our {product.name.toLowerCase()} is designed for a relaxed yet refined silhouette. 
                   Featuring sustainable materials and premium stitching.
                 </p>
-                <ul className="text-[10px] text-gray-400 space-y-2 uppercase tracking-widest list-disc pl-4">
+                <ul className="text-[10px] text-gray-600 space-y-2 uppercase tracking-widest list-disc pl-4 font-medium">
                   <li>Dry clean only</li>
                   <li>Ethically sourced</li>
                   <li>True to size</li>

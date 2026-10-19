@@ -18,7 +18,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onMouseEnter, onMouseLeave 
         isOpen ? "max-h-[100vh] md:max-h-[600px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
       }`}
     >
-      <div className="w-full px-6 py-8 md:px-10 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 font-['Lexend_Giga']">
+      <div className="w-full px-6 py-8 md:px-10 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 font-editorial">
         
         {/* Categories Column */}
         <div className="col-span-1 md:col-span-3 space-y-4 md:space-y-6">

@@ -12,11 +12,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const isLowStock = product.inStock && product.stock_quantity > 0 && product.stock_quantity < 10;
 
   return (
-    <div className={`group cursor-pointer font-['Lexend_Giga'] relative ${isOutOfStock ? 'opacity-80' : ''}`}>
+    <div className={`group cursor-pointer font-editorial relative ${isOutOfStock ? 'opacity-80' : ''}`}>
       {/* Badges - Top Left Stack */}
       <div className="absolute top-4 left-4 z-10 flex flex-col gap-2 pointer-events-none">
         {isOutOfStock ? (
-          <span className="bg-gray-400 text-white text-[8px] px-2 py-1 font-bold tracking-widest uppercase">
+          <span className="bg-gray-600 text-white text-[8px] px-2 py-1 font-bold tracking-widest uppercase">
             Sold Out
           </span>
         ) : (
@@ -86,8 +86,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       {/* Product Information */}
       <div className="mt-4 space-y-1">
-        <h3 className={`text-[11px] md:text-[12px] uppercase tracking-widest font-medium truncate ${
-          isOutOfStock ? 'text-gray-400' : 'text-black/90'
+        <h3 className={`text-[13px] md:text-[14px] uppercase tracking-tight leading-tight ${
+          isOutOfStock ? 'text-gray-400' : 'text-gray-900'
         }`}>
           {product.name}
         </h3>
@@ -95,15 +95,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="flex items-center gap-3">
           {product.onSale && product.discountPrice ? (
             <>
-              <p className={`text-[11px] md:text-[12px] font-bold ${isOutOfStock ? 'text-gray-400' : 'text-red-600'}`}>
+              <p className={`text-[12px] font-bold ${isOutOfStock ? 'text-gray-400' : 'text-red-600'}`}>
                 ${product.discountPrice.toFixed(2)}
               </p>
-              <p className="text-[10px] text-gray-400 line-through decoration-gray-300">
+              <p className="text-[11px] text-gray-500 line-through decoration-gray-400">
                 ${product.price.toFixed(2)}
               </p>
             </>
           ) : (
-            <p className={`text-[11px] md:text-[12px] ${isOutOfStock ? 'text-gray-300' : 'text-gray-500'}`}>
+            <p className={`text-[12px] font-medium ${isOutOfStock ? 'text-gray-400' : 'text-gray-600'}`}>
               ${product.price.toFixed(2)}
             </p>
           )}

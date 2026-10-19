@@ -12,7 +12,7 @@ const socialImages = [fb1, fb2, fb3, fb4, fb5];
 
 const SocialFeed: React.FC = () => {
   return (
-    <section className="w-full px-4 md:px-10 py-20 bg-transparent font-['Lexend_Giga']">
+    <section className="w-full px-4 md:px-10 py-20 bg-transparent font-editorial">
       {/* Header Section */}
       <div className="flex flex-col items-center mb-12 text-center">
         <h2 className="text-sm md:text-base tracking-[0.3em] uppercase mb-2">

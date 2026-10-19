@@ -1,20 +1,51 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --color-brand-bg: #e0f2fe; /* Declaring here ensures inline styles work */
-  font-family: "Lexend Giga", sans-serif;
-  letter-spacing: -0.02em;
-}
-
-@theme {
-  --font-sans: "Lexend Giga", ui-sans-serif, system-ui;
   --color-brand-bg: #e0f2fe;
 }
 
+@theme {
+  --font-serif: "Times New Roman", Times, Georgia, serif;
+  --font-editorial: "Times New Roman", Times, Georgia, serif;
+  --font-sans: "Times New Roman", Times, Georgia, serif;
+  --color-brand-bg: #e0f2fe;
+}
+
+/* Base Body Styling - Preserves classic editorial luxury serif from original homepage */
 body {
   background-color: var(--color-brand-bg);
-  font-family: 'Lexend Giga', sans-serif;
+  font-family: 'Times New Roman', Times, Georgia, serif;
   color: #1a1a1a;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reusable Fixed Font Classes */
+.font-editorial,
+.font-serif-luxury {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+}
+
+/* Fallback protection: ensures any residual class referencing Lexend_Giga uses editorial serif */
+.font-['Lexend_Giga'],
+[class*="Lexend_Giga"] {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+}
+
+/* Standard Product Title styling */
+.font-product-title {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #111827 !important;
+}
+
+/* Product Price styling */
+.font-product-price {
+  font-family: 'Times New Roman', Times, Georgia, serif !important;
+  color: #4b5563 !important;
 }

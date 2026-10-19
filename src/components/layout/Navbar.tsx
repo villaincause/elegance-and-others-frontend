@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
         {/* 2. NAVBAR */}
         <header 
           style={{ backgroundColor: '#e0f2fe' }}
-          className="w-full border-b border-black/5 font-['Lexend_Giga']"
+          className="w-full border-b border-black/5 font-editorial"
         >
           <div className="w-full px-4 md:px-10 flex items-center h-24 relative">
             
@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
               <div className="absolute top-full right-0 w-80 bg-white shadow-2xl border-t border-black/5 p-10 animate-in fade-in slide-in-from-top-2 duration-300">
                 <div className="space-y-8 text-center">
                   <div className="space-y-2">
-                    <p className="text-[9px] uppercase tracking-[0.4em] text-gray-400">
+                    <p className="text-[9px] uppercase tracking-[0.4em] text-gray-600 font-medium">
                       {isLoggedIn ? "Welcome Back" : "Identity"}
                     </p>
                     <h4 className="text-[12px] uppercase font-bold tracking-widest">

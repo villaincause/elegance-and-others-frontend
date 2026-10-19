@@ -6,7 +6,7 @@ const PromoSection: React.FC = () => {
   return (
     <section
       /* Added mt-[141px] to push the section below the fixed header */
-      className="w-full mt-[141px] h-[calc(85vh-141px)] bg-cover bg-center flex items-end justify-start overflow-hidden relative font-['Lexend_Giga']"
+      className="w-full mt-[141px] h-[calc(85vh-141px)] bg-cover bg-center flex items-end justify-start overflow-hidden relative font-editorial"
       style={{ backgroundImage: `url(${promoImg})` }}
     >
       {/* Subtle overlay for text contrast */}

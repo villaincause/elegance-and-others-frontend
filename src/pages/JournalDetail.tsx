@@ -53,9 +53,9 @@ const JournalDetail: React.FC = () => {
               {article.title}
             </h1>
             <div className="flex justify-center items-center gap-8 pt-4">
-              <p className="text-[9px] uppercase tracking-[0.3em] text-gray-400">By {article.author}</p>
-              <div className="w-1 h-1 rounded-full bg-gray-300"></div>
-              <p className="text-[9px] uppercase tracking-[0.3em] text-gray-400">{article.date}</p>
+              <p className="text-[9px] uppercase tracking-[0.3em] text-gray-600 font-medium">By {article.author}</p>
+              <div className="w-1 h-1 rounded-full bg-gray-400"></div>
+              <p className="text-[9px] uppercase tracking-[0.3em] text-gray-600 font-medium">{article.date}</p>
             </div>
           </div>
 
@@ -73,7 +73,7 @@ const JournalDetail: React.FC = () => {
 
           {/* Footer of Article */}
           <div className="mt-24 pt-12 border-t border-black/5 flex flex-col items-center gap-8">
-            <p className="text-[10px] uppercase tracking-[0.4em] text-gray-400 italic text-center">
+            <p className="text-[10px] uppercase tracking-[0.4em] text-gray-600 italic text-center font-medium">
               Share this Perspective
             </p>
             <div className="flex gap-10 text-[10px] uppercase tracking-[0.2em] font-bold">

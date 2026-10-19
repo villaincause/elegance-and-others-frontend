@@ -18,7 +18,7 @@ const products = [
 
 const FashionRow: React.FC = () => {
   return (
-    <section className="w-full px-4 md:px-10 pt-2 pb-12 bg-transparent font-['Lexend_Giga']">
+    <section className="w-full px-4 md:px-10 pt-2 pb-12 bg-transparent font-editorial">
       
       {/* Editorial Heading */}
       <div className="w-full mb-6">

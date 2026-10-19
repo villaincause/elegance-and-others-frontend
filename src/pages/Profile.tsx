@@ -147,7 +147,7 @@ const Profile: React.FC = () => {
             </button>
           </form>
           <div className="mt-12 text-center">
-            <button onClick={() => setIsRegistering(!isRegistering)} className="text-[9px] text-gray-400 uppercase tracking-widest hover:text-black">
+            <button onClick={() => setIsRegistering(!isRegistering)} className="text-[9px] text-gray-600 uppercase tracking-widest hover:text-black font-medium">
               {isRegistering ? "Already have an account? Log In" : "Don't have an account? Create One"}
             </button>
           </div>
@@ -160,7 +160,7 @@ const Profile: React.FC = () => {
     <div className="min-h-screen pt-40 pb-32 font-['Lexend_Giga']" style={{ backgroundColor: '#e0f2fe' }}>
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="mb-12">
-          <p className="text-[10px] uppercase tracking-[0.5em] text-gray-500 mb-2">Welcome Back,</p>
+          <p className="text-[10px] uppercase tracking-[0.5em] text-gray-600 mb-2 font-medium">Welcome Back,</p>
           <h1 className="text-[24px] md:text-[32px] uppercase font-bold tracking-widest">{user?.full_name}</h1>
         </div>
 
@@ -171,11 +171,11 @@ const Profile: React.FC = () => {
                 {user?.profile_picture ? (
                   <img src={getImageUrl(user.profile_picture)} className="w-full h-full object-cover" alt="Profile" />
                 ) : (
-                  <User size={40} strokeWidth={1} className="text-gray-300" />
+                  <User size={40} strokeWidth={1} className="text-gray-400" />
                 )}
               </div>
               <h2 className="text-[14px] uppercase font-bold tracking-widest">{user?.full_name}</h2>
-              <p className="text-[10px] text-gray-400 mt-1 uppercase tracking-widest italic font-bold">Member Account</p>
+              <p className="text-[10px] text-gray-600 mt-1 uppercase tracking-widest italic font-bold">Member Account</p>
             </div>
 
             {[
@@ -198,7 +198,7 @@ const Profile: React.FC = () => {
               </button>
             ))}
             
-            <button onClick={logout} className="w-full flex items-center gap-4 px-6 py-5 text-red-400 text-[10px] uppercase tracking-[0.2em] font-bold hover:text-red-600 transition-colors">
+            <button onClick={logout} className="w-full flex items-center gap-4 px-6 py-5 text-red-500 text-[10px] uppercase tracking-[0.2em] font-bold hover:text-red-700 transition-colors">
               <LogOut size={16} strokeWidth={1.5} /> Log Out
             </button>
           </div>
@@ -209,11 +209,11 @@ const Profile: React.FC = () => {
                 <h3 className="text-[12px] uppercase font-bold tracking-[0.4em] border-b pb-6">Account Information</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="space-y-2">
-                    <label className="text-[9px] text-gray-400 uppercase tracking-widest">Full Name</label>
+                    <label className="text-[9px] text-gray-600 uppercase tracking-widest font-medium">Full Name</label>
                     <p className="text-[11px] uppercase tracking-widest border-b border-gray-100 py-2">{user?.full_name}</p>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[9px] text-gray-400 uppercase tracking-widest">Email Address</label>
+                    <label className="text-[9px] text-gray-600 uppercase tracking-widest font-medium">Email Address</label>
                     <p className="text-[11px] tracking-widest border-b border-gray-100 py-2 lowercase">{user?.email}</p>
                   </div>
                 </div>
@@ -226,11 +226,11 @@ const Profile: React.FC = () => {
               <div className="space-y-8">
                 <h3 className="text-[12px] uppercase font-bold tracking-[0.4em] border-b pb-6">Your Orders</h3>
                 {loadingOrders ? (
-                  <p className="text-[10px] uppercase tracking-widest">Loading orders...</p>
+                  <p className="text-[10px] uppercase tracking-widest text-gray-600 animate-pulse font-medium">Loading orders...</p>
                 ) : orders.length === 0 ? (
-                  <div className="text-center py-20 opacity-30">
+                  <div className="text-center py-20 text-gray-500">
                     <ShoppingBag size={40} className="mx-auto mb-4" strokeWidth={1} />
-                    <p className="text-[10px] uppercase tracking-widest">No history found</p>
+                    <p className="text-[10px] uppercase tracking-widest font-medium">No history found</p>
                   </div>
                 ) : (
                   <div className="space-y-6">
@@ -238,8 +238,8 @@ const Profile: React.FC = () => {
                       <div key={order.id} className="border border-gray-100 p-6">
                         <div className="flex justify-between items-center mb-6 border-b border-gray-50 pb-4">
                           <span className="text-[10px] font-bold uppercase tracking-tighter">Order #{order.id}</span>
-                          <span className="text-[9px] text-gray-400 uppercase">{new Date(order.order_date).toLocaleDateString()}</span>
-                          <span className={`text-[9px] uppercase px-3 py-1 font-bold ${order.status === 'pending' ? 'bg-orange-50 text-orange-400' : 'bg-green-50 text-green-400'}`}>
+                          <span className="text-[9px] text-gray-600 uppercase font-medium">{new Date(order.order_date).toLocaleDateString()}</span>
+                          <span className={`text-[9px] uppercase px-3 py-1 font-bold ${order.status === 'pending' ? 'bg-orange-50 text-orange-600' : 'bg-green-50 text-green-700'}`}>
                             {order.status}
                           </span>
                         </div>
@@ -251,7 +251,7 @@ const Profile: React.FC = () => {
                                </div>
                                <div className="flex-1">
                                  <p className="text-[10px] font-bold uppercase">{item.product_name}</p>
-                                 <p className="text-[9px] text-gray-400 uppercase tracking-widest">QTY: {item.quantity} | Size: {item.size}</p>
+                                 <p className="text-[9px] text-gray-600 uppercase tracking-widest font-medium">QTY: {item.quantity} | Size: {item.size}</p>
                                </div>
                                <p className="text-[10px] font-bold">${parseFloat(item.price).toFixed(2)}</p>
                             </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const Footer: React.FC = () => {
   return (
     /* Reduced py-8 md:py-12 to py-6 md:py-8 to shrink the top/bottom gap */
-    <footer className="w-full px-4 md:px-10 py-6 md:py-8 bg-transparent font-['Lexend_Giga'] border-t border-black/5">
+    <footer className="w-full px-4 md:px-10 py-6 md:py-8 bg-transparent font-editorial border-t border-black/5">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
         
         {/* Contact Section */}
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
                 placeholder="Enter your email address" 
                 className="w-full bg-white/40 border border-black/10 px-5 py-4 text-[14px] focus:outline-none focus:border-black transition-colors"
               />
-              <p className="text-[10px] leading-relaxed text-gray-400 uppercase tracking-tight font-medium">
+              <p className="text-[10px] leading-relaxed text-gray-600 uppercase tracking-tight font-medium">
                 By signing up, you agree to our <a href="#" className="underline">Privacy Policy</a> and <a href="#" className="underline">Terms of Service</a>.
               </p>
               <button className="bg-black text-white px-7 py-3 text-[14px] uppercase tracking-[0.3em] hover:bg-zinc-800 transition-all active:scale-95">
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
       {/* Copyright Footer - Reduced mt-10 to mt-6 and pt-5 to pt-4 */}
       <div className="mt-8 pt-4 border-t border-black/5 flex justify-between items-center">
-        <span className="text-[11px] uppercase tracking-[0.2em] text-gray-400 font-medium">
+        <span className="text-[11px] uppercase tracking-[0.2em] text-gray-600 font-medium">
           © {new Date().getFullYear()} Elegance and others
         </span>
       </div>

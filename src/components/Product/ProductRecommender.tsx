@@ -49,7 +49,7 @@ const ProductRecommender: React.FC<ProductRecommenderProps> = ({ currentProductI
   if (recommendations.length === 0) return null;
 
   return (
-    <div className="mt-32 border-t border-gray-100 pt-20 pb-10 font-['Lexend_Giga']">
+    <div className="mt-32 border-t border-gray-100 pt-20 pb-10 font-editorial">
       <h3 className="text-[12px] uppercase tracking-[0.4em] font-bold mb-12 text-center text-gray-900">
         You May Also Like
       </h3>
@@ -69,10 +69,10 @@ const ProductRecommender: React.FC<ProductRecommenderProps> = ({ currentProductI
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
-            <h4 className="text-[10px] uppercase tracking-widest font-bold mb-1 text-gray-900">
+            <h4 className="text-[13px] md:text-[14px] uppercase tracking-tight leading-tight font-medium mb-1 text-gray-900">
               {product.name}
             </h4>
-            <p className="text-[10px] text-gray-500 uppercase tracking-widest">
+            <p className="text-[12px] text-gray-600 font-medium">
               ${product.price.toFixed(2)}
             </p>
           </Link>

@@ -111,15 +111,15 @@ const Checkout: React.FC = () => {
         <div>
           <div className="flex justify-between items-center mb-8 border-b pb-4">
             <h3 className="text-[10px] uppercase tracking-widest font-bold">Shipping Address</h3>
-            <Link to="/profile?tab=address" className="text-[9px] underline uppercase tracking-widest text-gray-400 hover:text-black transition-colors">
+            <Link to="/profile?tab=address" className="text-[9px] underline uppercase tracking-widest text-gray-600 hover:text-black transition-colors font-medium">
               Manage Addresses
             </Link>
           </div>
 
           {addresses.length === 0 ? (
             <div className="p-10 border border-dashed border-gray-200 text-center">
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest mb-4">No addresses saved</p>
-              <Link to="/profile" className="text-[9px] bg-black text-white px-6 py-2 uppercase tracking-widest">
+              <p className="text-[10px] text-gray-600 uppercase tracking-widest mb-4 font-medium">No addresses saved</p>
+              <Link to="/profile" className="text-[9px] bg-black text-white px-6 py-2 uppercase tracking-widest font-bold">
                 Add New Address
               </Link>
             </div>
@@ -132,7 +132,7 @@ const Checkout: React.FC = () => {
                   className={`p-6 border transition-all duration-300 cursor-pointer relative ${
                     selectedAddressId === addr.id 
                       ? 'border-black bg-white shadow-xl translate-x-1' 
-                      : 'border-gray-100 bg-gray-50/50 opacity-60 hover:opacity-100'
+                      : 'border-gray-100 bg-gray-50/50 opacity-80 hover:opacity-100'
                   }`}
                 >
                   <div className="flex justify-between items-start">
@@ -141,7 +141,7 @@ const Checkout: React.FC = () => {
                       <div className="bg-black text-white text-[8px] px-2 py-1 uppercase tracking-tighter">Selected</div>
                     )}
                   </div>
-                  <p className="text-[10px] text-gray-500 uppercase leading-relaxed">
+                  <p className="text-[10px] text-gray-600 uppercase leading-relaxed font-medium">
                     {addr.address_line1}<br />
                     {addr.city}, {addr.postal_code}<br />
                     T: {addr.phone_number}
@@ -159,7 +159,7 @@ const Checkout: React.FC = () => {
               <div key={`${item.id}-${item.selectedSize}`} className="flex justify-between items-start text-[10px] uppercase tracking-wider">
                 <div className="flex-1 pr-4">
                   <p className="font-bold mb-1">{item.name}</p>
-                  <p className="text-gray-400 text-[8px]">
+                  <p className="text-gray-600 text-[8px] font-medium">
                     {item.selectedSize} | {item.selectedColor.name} | QTY: {item.quantity}
                   </p>
                 </div>
@@ -169,11 +169,11 @@ const Checkout: React.FC = () => {
           </div>
 
           <div className="space-y-4 pt-6 border-t border-gray-100">
-            <div className="flex justify-between text-[10px] uppercase tracking-widest text-gray-400">
+            <div className="flex justify-between text-[10px] uppercase tracking-widest text-gray-600 font-medium">
               <span>Subtotal</span>
-              <span className="text-black">${cartTotal.toFixed(2)}</span>
+              <span className="text-black font-bold">${cartTotal.toFixed(2)}</span>
             </div>
-            <div className="flex justify-between text-[10px] uppercase tracking-widest text-gray-400">
+            <div className="flex justify-between text-[10px] uppercase tracking-widest text-gray-600 font-medium">
               <span>Shipping</span>
               <span className="text-green-600 font-bold">Complimentary</span>
             </div>
@@ -188,7 +188,7 @@ const Checkout: React.FC = () => {
             disabled={loading || !selectedAddressId}
             className={`w-full py-6 mt-10 text-[10px] uppercase tracking-[0.4em] font-bold transition-all ${
               loading || !selectedAddressId
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                ? 'bg-gray-100 text-gray-500 cursor-not-allowed'
                 : 'bg-black text-white hover:bg-zinc-800 active:scale-[0.98]'
             }`}
           >

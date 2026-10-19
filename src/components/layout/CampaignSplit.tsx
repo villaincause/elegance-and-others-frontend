@@ -24,7 +24,7 @@ const campaignData: CampaignItem[] = [
 const CampaignSplit: React.FC = () => {
   return (
     /* Added md:px-10 for breathing room and py-12 for vertical spacing */
-    <section className="w-full px-4 md:px-10 py-12 bg-transparent font-['Lexend_Giga']">
+    <section className="w-full px-4 md:px-10 py-12 bg-transparent font-editorial">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {campaignData.map((item, index) => (
           <a 

@@ -61,7 +61,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Scrollable Content Area */}
-        <div className="w-full h-[calc(100vh-80px)] overflow-y-auto px-8 py-10 font-['Lexend_Giga'] scroll-smooth no-scrollbar">
+        <div className="w-full h-[calc(100vh-80px)] overflow-y-auto px-8 py-10 font-editorial scroll-smooth no-scrollbar">
           <style>{`
             .no-scrollbar::-webkit-scrollbar { display: none; }
             .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
