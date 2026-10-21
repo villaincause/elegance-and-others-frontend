@@ -119,7 +119,7 @@ const Profile: React.FC = () => {
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen pt-40 flex items-center justify-center font-['Lexend_Giga']" style={{ backgroundColor: '#e0f2fe' }}>
+      <div className="min-h-screen pt-40 flex items-center justify-center font-editorial" style={{ backgroundColor: '#e0f2fe' }}>
         <div className="w-full max-w-md p-12 bg-white shadow-sm border border-white/50">
           <h1 className="text-[18px] uppercase tracking-[0.5em] font-bold mb-12 text-center">
             {isRegistering ? "Join Us" : "Identity"}
@@ -157,14 +157,14 @@ const Profile: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen pt-40 pb-32 font-['Lexend_Giga']" style={{ backgroundColor: '#e0f2fe' }}>
+    <div className="min-h-screen pt-40 pb-32 font-editorial" style={{ backgroundColor: '#e0f2fe' }}>
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="mb-12">
-          <p className="text-[10px] uppercase tracking-[0.5em] text-gray-600 mb-2 font-medium">Welcome Back,</p>
-          <h1 className="text-[24px] md:text-[32px] uppercase font-bold tracking-widest">{user?.full_name}</h1>
+          <p className="text-[12px] uppercase tracking-[0.5em] text-gray-600 mb-2 font-medium">Welcome Back,</p>
+          <h1 className="text-[28px] md:text-[36px] uppercase font-bold tracking-widest">{user?.full_name}</h1>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-16">
+        <div className="flex flex-col lg:flex-row gap-20">
           <div className="w-full lg:w-1/4 space-y-2">
             <div className="mb-10 flex flex-col items-center lg:items-start">
               <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center border border-white/50 overflow-hidden mb-4">
@@ -174,8 +174,8 @@ const Profile: React.FC = () => {
                   <User size={40} strokeWidth={1} className="text-gray-400" />
                 )}
               </div>
-              <h2 className="text-[14px] uppercase font-bold tracking-widest">{user?.full_name}</h2>
-              <p className="text-[10px] text-gray-600 mt-1 uppercase tracking-widest italic font-bold">Member Account</p>
+              <h2 className="text-[16px] uppercase font-bold tracking-widest">{user?.full_name}</h2>
+              <p className="text-[12px] text-gray-600 mt-1 uppercase tracking-widest italic font-bold">Member Account</p>
             </div>
 
             {[
@@ -192,13 +192,13 @@ const Profile: React.FC = () => {
               >
                 <div className="flex items-center gap-4">
                   <tab.icon size={16} strokeWidth={1.5} />
-                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold">{tab.label}</span>
+                  <span className="text-[12px] uppercase tracking-[0.2em] font-bold">{tab.label}</span>
                 </div>
                 <ChevronRight size={14} opacity={activeTab === tab.id ? 1 : 0.3} />
               </button>
             ))}
             
-            <button onClick={logout} className="w-full flex items-center gap-4 px-6 py-5 text-red-500 text-[10px] uppercase tracking-[0.2em] font-bold hover:text-red-700 transition-colors">
+            <button onClick={logout} className="w-full flex items-center gap-4 px-6 py-5 text-red-500 text-[12px] uppercase tracking-[0.2em] font-bold hover:text-red-700 transition-colors">
               <LogOut size={16} strokeWidth={1.5} /> Log Out
             </button>
           </div>
@@ -206,15 +206,15 @@ const Profile: React.FC = () => {
           <div className="flex-1 bg-white p-10 md:p-16 border border-white/50 shadow-sm min-h-[500px]">
             {activeTab === 'details' && (
               <div className="space-y-12">
-                <h3 className="text-[12px] uppercase font-bold tracking-[0.4em] border-b pb-6">Account Information</h3>
+                <h3 className="text-[16px] uppercase font-bold tracking-[0.4em] border-b pb-6">Account Information</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="space-y-2">
-                    <label className="text-[9px] text-gray-600 uppercase tracking-widest font-medium">Full Name</label>
-                    <p className="text-[11px] uppercase tracking-widest border-b border-gray-100 py-2">{user?.full_name}</p>
+                    <label className="text-[12px] text-gray-600 uppercase tracking-widest font-medium">Full Name</label>
+                    <p className="text-[14px] uppercase tracking-widest border-b border-gray-100 py-2">{user?.full_name}</p>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-[9px] text-gray-600 uppercase tracking-widest font-medium">Email Address</label>
-                    <p className="text-[11px] tracking-widest border-b border-gray-100 py-2 lowercase">{user?.email}</p>
+                    <label className="text-[12px] text-gray-600 uppercase tracking-widest font-medium">Email Address</label>
+                    <p className="text-[14px] tracking-widest border-b border-gray-100 py-2 lowercase">{user?.email}</p>
                   </div>
                 </div>
               </div>
@@ -224,22 +224,22 @@ const Profile: React.FC = () => {
             
             {activeTab === 'orders' && (
               <div className="space-y-8">
-                <h3 className="text-[12px] uppercase font-bold tracking-[0.4em] border-b pb-6">Your Orders</h3>
+                <h3 className="text-[16px] uppercase font-bold tracking-[0.4em] border-b pb-6">Your Orders</h3>
                 {loadingOrders ? (
-                  <p className="text-[10px] uppercase tracking-widest text-gray-600 animate-pulse font-medium">Loading orders...</p>
+                  <p className="text-[12px] uppercase tracking-widest text-gray-600 animate-pulse font-medium">Loading orders...</p>
                 ) : orders.length === 0 ? (
                   <div className="text-center py-20 text-gray-500">
                     <ShoppingBag size={40} className="mx-auto mb-4" strokeWidth={1} />
-                    <p className="text-[10px] uppercase tracking-widest font-medium">No history found</p>
+                    <p className="text-[12px] uppercase tracking-widest font-medium">No history found</p>
                   </div>
                 ) : (
                   <div className="space-y-6">
                     {orders.map((order) => (
                       <div key={order.id} className="border border-gray-100 p-6">
                         <div className="flex justify-between items-center mb-6 border-b border-gray-50 pb-4">
-                          <span className="text-[10px] font-bold uppercase tracking-tighter">Order #{order.id}</span>
-                          <span className="text-[9px] text-gray-600 uppercase font-medium">{new Date(order.order_date).toLocaleDateString()}</span>
-                          <span className={`text-[9px] uppercase px-3 py-1 font-bold ${order.status === 'pending' ? 'bg-orange-50 text-orange-600' : 'bg-green-50 text-green-700'}`}>
+                          <span className="text-[12px] font-bold uppercase tracking-tighter">Order #{order.id}</span>
+                          <span className="text-[11px] text-gray-600 uppercase font-medium">{new Date(order.order_date).toLocaleDateString()}</span>
+                          <span className={`text-[11px] uppercase px-3 py-1 font-bold ${order.status === 'pending' ? 'bg-orange-50 text-orange-600' : 'bg-green-50 text-green-700'}`}>
                             {order.status}
                           </span>
                         </div>
@@ -250,16 +250,16 @@ const Profile: React.FC = () => {
                                  <img src={getImageUrl(item.image)} className="w-full h-full object-cover" alt={item.product_name} />
                                </div>
                                <div className="flex-1">
-                                 <p className="text-[10px] font-bold uppercase">{item.product_name}</p>
-                                 <p className="text-[9px] text-gray-600 uppercase tracking-widest font-medium">QTY: {item.quantity} | Size: {item.size}</p>
+                                 <p className="text-[12px] font-bold uppercase">{item.product_name}</p>
+                                 <p className="text-[11px] text-gray-600 uppercase tracking-widest font-medium">QTY: {item.quantity} | Size: {item.size}</p>
                                </div>
-                               <p className="text-[10px] font-bold">${parseFloat(item.price).toFixed(2)}</p>
+                               <p className="text-[12px] font-bold">${parseFloat(item.price).toFixed(2)}</p>
                             </div>
                           ))}
                         </div>
                         <div className="mt-6 pt-4 border-t border-gray-50 flex justify-between">
-                          <span className="text-[10px] uppercase font-bold">Total Amount</span>
-                          <span className="text-[11px] font-bold text-black">${parseFloat(order.total_amount).toFixed(2)}</span>
+                          <span className="text-[12px] uppercase font-bold">Total Amount</span>
+                          <span className="text-[14px] font-bold text-black">${parseFloat(order.total_amount).toFixed(2)}</span>
                         </div>
                       </div>
                     ))}

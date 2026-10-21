@@ -85,7 +85,7 @@ const CartDrawer: React.FC = () => {
                         <h3 className="text-[13px] md:text-[14px] uppercase font-medium tracking-tight leading-tight text-gray-900">
                           {item.name}
                         </h3>
-                        <p className="text-[12px] font-medium text-gray-600">${item.price}</p>
+                        <p className="text-[14px] font-medium text-gray-600">${item.price}</p>
                       </div>
                       <p className="text-[9px] text-gray-600 uppercase tracking-[0.2em] font-medium">
                         {item.selectedColor.name} / {item.selectedSize}

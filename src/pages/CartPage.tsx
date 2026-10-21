@@ -51,7 +51,7 @@ const CartPage: React.FC = () => {
                         {item.selectedSize} / {item.selectedColor.name}
                       </p>
                     </div>
-                    <p className="text-[12px] font-medium text-gray-600">${item.price}</p>
+                    <p className="text-[14px] font-medium text-gray-600">${item.price}</p>
                   </div>
 
                   <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-50">
@@ -79,21 +79,21 @@ const CartPage: React.FC = () => {
           {/* Right: Summary */}
           <div className="w-full lg:w-[25%] lg:ml-auto">
             <div className="p-10 bg-white shadow-sm border border-white/50 space-y-10">
-              <h2 className="text-[11px] uppercase font-bold tracking-[0.4em] border-b border-gray-100 pb-6">Order Summary</h2>
+              <h2 className="text-[13px] uppercase font-bold tracking-[0.4em] border-b border-gray-100 pb-6">Order Summary</h2>
               
               <div className="space-y-6">
-                <div className="flex justify-between text-[10px] uppercase tracking-widest text-gray-600 font-medium">
+                <div className="flex justify-between text-[12px] uppercase tracking-widest text-gray-600 font-medium">
                   <span>Subtotal</span>
                   <span className="text-black font-bold">${cartTotal.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-[10px] uppercase tracking-widest text-gray-600 font-medium">
+                <div className="flex justify-between text-[12px] uppercase tracking-widest text-gray-600 font-medium">
                   <span>Shipping</span>
                   <span className="text-black italic tracking-normal">Calculated Next</span>
                 </div>
               </div>
 
               <div className="pt-8 border-t border-gray-100 flex justify-between items-end">
-                <span className="text-[11px] uppercase font-bold tracking-widest">Total</span>
+                <span className="text-[13px] uppercase font-bold tracking-widest">Total</span>
                 <span className="text-3xl font-bold tracking-tighter">${cartTotal.toFixed(2)}</span>
               </div>
 
@@ -105,7 +105,7 @@ const CartPage: React.FC = () => {
                 Checkout Now
               </button>
               
-              <p className="text-[9px] text-gray-600 text-center uppercase tracking-widest leading-relaxed">
+              <p className="text-[11px] text-gray-600 text-center uppercase tracking-widest leading-relaxed">
                 Secure SSL encrypted checkout
               </p>
             </div>

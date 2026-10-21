@@ -33,7 +33,7 @@ const ARTICLES = [
 
 const Journal: React.FC = () => {
   return (
-    <div className="min-h-screen pt-40 pb-32 font-['Lexend_Giga']" style={{ backgroundColor: '#e0f2fe' }}>
+    <div className="min-h-screen pt-40 pb-32 font-editorial" style={{ backgroundColor: '#e0f2fe' }}>
       <div className="max-w-[1600px] mx-auto px-6 md:px-16">
         
         {/* Header Section */}

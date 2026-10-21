@@ -95,7 +95,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="flex items-center gap-3">
           {product.onSale && product.discountPrice ? (
             <>
-              <p className={`text-[12px] font-bold ${isOutOfStock ? 'text-gray-400' : 'text-red-600'}`}>
+              <p className={`text-[14px] font-bold ${isOutOfStock ? 'text-gray-400' : 'text-red-600'}`}>
                 ${product.discountPrice.toFixed(2)}
               </p>
               <p className="text-[11px] text-gray-500 line-through decoration-gray-400">
@@ -103,7 +103,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               </p>
             </>
           ) : (
-            <p className={`text-[12px] font-medium ${isOutOfStock ? 'text-gray-400' : 'text-gray-600'}`}>
+            <p className={`text-[14px] font-medium ${isOutOfStock ? 'text-gray-400' : 'text-gray-600'}`}>
               ${product.price.toFixed(2)}
             </p>
           )}

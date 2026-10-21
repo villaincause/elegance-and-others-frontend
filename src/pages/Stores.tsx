@@ -30,7 +30,7 @@ const STORES = [
 
 const Stores: React.FC = () => {
   return (
-    <div className="min-h-screen pt-32 pb-20 font-['Lexend_Giga']" style={{ backgroundColor: '#e0f2fe' }}>
+    <div className="min-h-screen pt-32 pb-20 font-editorial" style={{ backgroundColor: '#e0f2fe' }}>
       <div className="max-w-[1600px] mx-auto px-6 md:px-16">
         
         {/* Page Header */}

@@ -31,7 +31,6 @@ body {
 }
 
 /* Fallback protection: ensures any residual class referencing Lexend_Giga uses editorial serif */
-.font-['Lexend_Giga'],
 [class*="Lexend_Giga"] {
   font-family: 'Times New Roman', Times, Georgia, serif !important;
 }

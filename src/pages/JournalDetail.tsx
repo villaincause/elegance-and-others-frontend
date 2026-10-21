@@ -20,7 +20,7 @@ const JournalDetail: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-32 font-['Lexend_Giga']" style={{ backgroundColor: '#e0f2fe' }}>
+    <div className="min-h-screen pt-32 pb-32 font-editorial" style={{ backgroundColor: '#e0f2fe' }}>
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         
         {/* Back Button */}

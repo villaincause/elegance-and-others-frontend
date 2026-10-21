@@ -91,7 +91,7 @@ const Checkout: React.FC = () => {
   // If cart is empty and we aren't currently loading a success state, show empty state
   if (cartItems.length === 0 && !loading) {
     return (
-      <div className="pt-40 pb-20 px-4 text-center font-['Lexend_Giga']">
+      <div className="pt-40 pb-20 px-4 text-center font-editorial">
         <h2 className="text-xl uppercase mb-8">Your bag is empty</h2>
         <Link to="/" className="text-[10px] bg-black text-white px-8 py-4 uppercase tracking-widest">
           Continue Shopping
@@ -101,7 +101,7 @@ const Checkout: React.FC = () => {
   }
 
   return (
-    <div className="pt-40 pb-20 px-4 md:px-10 max-w-6xl mx-auto font-['Lexend_Giga']">
+    <div className="pt-40 pb-20 px-4 md:px-10 max-w-6xl mx-auto font-editorial">
       <div className="flex items-center gap-4 mb-12">
         <h1 className="text-xl md:text-2xl uppercase tracking-tighter font-bold">Checkout</h1>
         <span className="h-[1px] flex-1 bg-gray-100"></span>
@@ -153,7 +153,7 @@ const Checkout: React.FC = () => {
         </div>
 
         <div className="bg-white p-8 md:p-12 h-fit border border-gray-100 shadow-sm">
-          <h3 className="text-[10px] uppercase tracking-widest font-bold mb-8 border-b pb-4">Bag Summary</h3>
+          <h3 className="text-[12px] uppercase tracking-widest font-bold mb-8 border-b pb-4">Bag Summary</h3>
           <div className="space-y-6 mb-10 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
             {cartItems.map((item: CartItem) => (
               <div key={`${item.id}-${item.selectedSize}`} className="flex justify-between items-start text-[10px] uppercase tracking-wider">
@@ -169,11 +169,11 @@ const Checkout: React.FC = () => {
           </div>
 
           <div className="space-y-4 pt-6 border-t border-gray-100">
-            <div className="flex justify-between text-[10px] uppercase tracking-widest text-gray-600 font-medium">
+            <div className="flex justify-between text-[12px] uppercase tracking-widest text-gray-600 font-medium">
               <span>Subtotal</span>
               <span className="text-black font-bold">${cartTotal.toFixed(2)}</span>
             </div>
-            <div className="flex justify-between text-[10px] uppercase tracking-widest text-gray-600 font-medium">
+            <div className="flex justify-between text-[12px] uppercase tracking-widest text-gray-600 font-medium">
               <span>Shipping</span>
               <span className="text-green-600 font-bold">Complimentary</span>
             </div>

@@ -58,10 +58,10 @@ const UserAddresses: React.FC<{ userId: number }> = ({ userId }) => {
   return (
     <div className="font-editorial">
       <div className="flex justify-between items-center mb-10">
-        <h2 className="text-[12px] uppercase tracking-[0.3em] font-bold">Saved Addresses</h2>
+        <h2 className="text-[14px] uppercase tracking-[0.3em] font-bold">Saved Addresses</h2>
         <button 
           onClick={() => setIsModalOpen(true)}
-          className="flex items-center gap-2 text-[9px] uppercase tracking-widest border border-black px-4 py-2 hover:bg-black hover:text-white transition-all"
+          className="flex items-center gap-2 text-[11px] uppercase tracking-widest border border-black px-4 py-2 hover:bg-black hover:text-white transition-all"
         >
           <Plus size={14} /> Add New
         </button>
@@ -71,8 +71,8 @@ const UserAddresses: React.FC<{ userId: number }> = ({ userId }) => {
         {addresses.map((addr) => (
           <div key={addr.id} className="border border-gray-100 p-6 relative group bg-white shadow-sm hover:shadow-md transition-shadow">
             <MapPin size={16} className="text-gray-300 mb-4" />
-            <p className="text-[11px] font-bold uppercase mb-2">{addr.full_name}</p>
-            <p className="text-[10px] text-gray-600 uppercase leading-relaxed mb-4 font-medium">
+            <p className="text-[13px] font-bold uppercase mb-2">{addr.full_name}</p>
+            <p className="text-[12px] text-gray-600 uppercase leading-relaxed mb-4 font-medium">
               {addr.address_line1}<br />
               {addr.city}, {addr.postal_code}<br />
               T: {addr.phone_number}
@@ -94,43 +94,43 @@ const UserAddresses: React.FC<{ userId: number }> = ({ userId }) => {
               <X size={20} strokeWidth={1} />
             </button>
             
-            <h3 className="text-[12px] uppercase tracking-[0.4em] font-bold mb-8">New Address</h3>
+            <h3 className="text-[14px] uppercase tracking-[0.4em] font-bold mb-8">New Address</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <input 
                 placeholder="FULL NAME"
-                className="w-full border-b border-gray-200 py-3 text-[10px] uppercase tracking-widest outline-none focus:border-black transition-colors"
+                className="w-full border-b border-gray-200 py-3 text-[12px] uppercase tracking-widest outline-none focus:border-black transition-colors"
                 onChange={(e) => setFormData({...formData, full_name: e.target.value})}
                 required
               />
               <input 
                 placeholder="STREET ADDRESS"
-                className="w-full border-b border-gray-200 py-3 text-[10px] uppercase tracking-widest outline-none focus:border-black transition-colors"
+                className="w-full border-b border-gray-200 py-3 text-[12px] uppercase tracking-widest outline-none focus:border-black transition-colors"
                 onChange={(e) => setFormData({...formData, address_line1: e.target.value})}
                 required
               />
               <div className="grid grid-cols-2 gap-4">
                 <input 
                   placeholder="CITY"
-                  className="w-full border-b border-gray-200 py-3 text-[10px] uppercase tracking-widest outline-none focus:border-black transition-colors"
+                  className="w-full border-b border-gray-200 py-3 text-[12px] uppercase tracking-widest outline-none focus:border-black transition-colors"
                   onChange={(e) => setFormData({...formData, city: e.target.value})}
                   required
                 />
                 <input 
                   placeholder="POSTAL CODE"
-                  className="w-full border-b border-gray-200 py-3 text-[10px] uppercase tracking-widest outline-none focus:border-black transition-colors"
+                  className="w-full border-b border-gray-200 py-3 text-[12px] uppercase tracking-widest outline-none focus:border-black transition-colors"
                   onChange={(e) => setFormData({...formData, postal_code: e.target.value})}
                   required
                 />
               </div>
               <input 
                 placeholder="PHONE NUMBER"
-                className="w-full border-b border-gray-200 py-3 text-[10px] uppercase tracking-widest outline-none focus:border-black transition-colors"
+                className="w-full border-b border-gray-200 py-3 text-[12px] uppercase tracking-widest outline-none focus:border-black transition-colors"
                 onChange={(e) => setFormData({...formData, phone_number: e.target.value})}
                 required
               />
               
-              <button type="submit" className="w-full bg-black text-white py-4 text-[10px] uppercase tracking-[0.3em] font-bold mt-4">
+              <button type="submit" className="w-full bg-black text-white py-4 text-[12px] uppercase tracking-[0.3em] font-bold mt-4">
                 Save Address
               </button>
             </form>

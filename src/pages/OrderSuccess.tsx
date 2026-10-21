@@ -11,7 +11,7 @@ const OrderSuccess: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pt-40 pb-20 px-4 flex flex-col items-center justify-center font-['Lexend_Giga']">
+    <div className="min-h-screen pt-40 pb-20 px-4 flex flex-col items-center justify-center font-editorial">
       <div className="max-w-md w-full text-center">
         {/* Success Icon */}
         <div className="mb-10 flex justify-center">
